@@ -1,0 +1,101 @@
+/*
+
+****          Do you run the walker or walk it?!?!?        *********
+
+Emma Bernstein
+Mary McGreal
+Instructions to walk a DNA walker in paraGAT
+*/
+
+/*
+Definitions---------------------------------------------------------
+SCAFFOLD - long strand that holds pegs.
+PEG - short strands that allow the walker to move along the base
+	in the image these include a, b, and c strands.
+BASE - scaffold and pegs
+FOOT - stands on the walker that may bind or unbind ("walk") 
+	along the base, using tape and untape strands.  
+	x or y in the image.
+WALKER - the mobile structure composed of two feet that 
+	traverses the base. See x and y structure in the image.
+*/
+
+/*
+Constructor for Stack-----------------------------------------------
+This file assumes that the scaffold and pegs have been
+constructed and then released into the test tube. [This could occur
+within the same test tube, prior to "running" walker 
+operations  with a specific set of "constructor" gates to 
+unlock only "peg" stacks (a tick/tock stack with a, b, and c 
+strands as in the image).]  These processes are defined in 
+WalkerSetup.gat.
+*/
+
+import WalkerSetup.gat
+paraGAT WalkerSetup.gat
+
+/*
+It is assumed that for any strand in this file, x complement implies 
+t complement tail, and y complement implies an s complement 
+tail.
+
+Tape----------------------------------------------------------------
+Tape releases a strand (the "tape")
+to latch onto a "peg" of the scaffold, with a 
+segment which binds to the mobile "walker" and a tail for the untape 
+operation (s and t in the image).
+Tape takes two parameters, which define the tape strand to 
+be released.  This strand will consist of a peg complement, 
+a foot complement, and a tail to move the walker forward.
+It will bind to the next free peg.
+Same peg, but a different foot from three lines before!
+
+Untape--------------------------------------------------------------
+Untape releases a strand (the "untape") to unlock one 
+"foot" of the mobile walker so that it is free to 
+continue traversing the base.  
+Untape takes two parameters, which define the tape strand to 
+be released.  This strand will be a tape complement of the 
+tape prior to the previous tape.
+Same peg, same foot as three lines before!
+
+Walker-------------------------------------------------------------
+*/
+//We assume peg one is a c peg
+
+begin sync
+	tape[c,y] //attach the initial leg to a peg
+end sync
+
+barrier sync //may or may not be needed b/c in loop
+
+for (int peg = 0; peg < numpegs; peg+=6) {    
+	begin sync      // each time you cycle through 6 pegs
+		tape[a,x]   //Not sure how tape naming works; pref tapeAX?               
+		untape[c,y] //1
+		tape[b,y]
+		untape[a,x] //2
+		tape[c,x]
+		untape[b,y] //3
+		tape[a,y]
+		untape[c,x] //4
+		tape[b,x]
+		untape[a,y] //5
+		tape[c,y]
+		untape[b,x] //6
+	end sync
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
