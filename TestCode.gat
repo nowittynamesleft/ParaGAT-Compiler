@@ -1,0 +1,83 @@
+// The x-axis consists of a scaffold and A, B, and C pegs.
+
+
+/*Strand is like Object class in java- it is the superclass of all classes. 
+It has lots of cool strand functions that work for both Sequence and Complements (subclasses).*/
+
+In Strand Class
+	Copy(<Number of desired copies>, <Strand to be copied>)
+	Complement //Strand operation that makes the complement of the calling Strand
+
+How to Declare a Sequence in ParaGAT
+	Types
+		Sequence <Variable Name> = new Sequence(<length in nucleotides>) //Gives a randomly generated sequence of nuclotides
+		Sequence <Variable Name> = {'a','g','t', etc.} //Construct sequence as specificed
+
+	//starter peg
+	Sequence walkerPegZ = new Sequence(25)
+	Sequence basePegZ = new Sequence(25)
+
+	//A, B, & C
+	Sequence walkerPegA = new Sequence(25)
+	Sequence walkerPegB = new Sequence(25)
+	Sequence walkerPegC = new Sequence(25)
+
+	Sequence basePegA = new Sequence(25)
+	Sequence basePegB = new Sequence(25)
+	Sequence basePegC = new Sequence(25)
+
+	Sequence pegA = walkerPegA + basePegA
+	Sequence pegB = walkerPegB + basePegB
+	Sequence pegC = walkerPegC + basePegC
+
+	//Walker
+	Sequence footX = new Sequence(25)
+	Sequence footBridgeX = new Sequence(25)
+	Sequence footBridgeY = new Sequence(25)
+	Sequence footY = new Sequence(25)
+
+	Strand xPiece = footX + footBridgeX
+	Strand yPiece = footY + footBridgeY
+
+	//Tape Components
+	
+	Sequence walkerPegZComp = walkerPegZ.complement() //for starter peg
+	Sequence walkerPegAComp = walkerPegA.compelment()
+	Sequence walkerPegBComp = walkerPegB.compelment()
+	Sequence walkerPegCComp = walkerPegC.complement()
+
+	Sequence footXComp = footX.complemet()
+	Sequence footYComp = footY.complemet()
+
+	Sequence tailS = new Sequence(25)
+	Sequence tailT = new Sequence(25)
+
+
+	//Put together to make all the tapes!
+	//this is the order in which they are used, assuming footY is taped to the starter peg and footX is solo
+	//order matters bc tails alternate
+
+	Sequence tapeZY = walkerPegZComp + footYComp + tailS //for starter peg; one time use
+	Sequence tapeAX = walkerPegAComp + footXComp + tailT
+	Sequence tapeBY = walkerPegBComp + footYComp + tailS
+	Sequence tapeCX = walkerPegCComp + footXComp + tailT
+	Sequence tapeAY = walkerPegAComp + footYComp + tailS
+	Sequence tapeBX = walkerPegBComp + footXComp + tailT
+	Sequence tapeCY = walkerPegCComp + footYComp + tailS
+
+
+
+	Lexer/ Tokenizer (parses thru the code to make an AST: Abstract Syntax Tree) THIS IS NOT A PARSER
+		converts characters to tokens
+
+	Parser
+		takes AST and finds syntax errors
+
+
+
+
+
+
+
+
+	

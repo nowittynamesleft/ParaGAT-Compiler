@@ -1,0 +1,33 @@
+/*
+
+****          Do you run the walker or walk it?!?!?        *********
+
+Emma Bernstein
+Mary McGreal
+Instructions to build a DNA walker in paraGAT
+
+Definitions----------------------------------------------------------
+SCAFFOLD - long strand that holds pegs.
+PEG - short strands that allow the walker to move along the base
+	in the image these include a, b, and c strands.
+BASE - scaffold and pegs
+FOOT - stands on the walker that may bind or unbind ("walk") 
+	along the base, using tape and untape strands.  
+	x or y in the image.
+WALKER - the mobile structure composed of two feet that 
+	traverses the base. See x and y structure in the image.
+
+Constructor for Base-------------------------------------------------
+This file creates the base to release into the test tube 
+prior to running the walker.
+*/
+
+pour scaffold
+pour pegs
+
+/*
+Stack Constructor---------------------------------------------------
+This will organize the sequence of instructions into a stack.
+It will require for a pipette machine to work between multiple
+plates of tape and untape materials.
+*/

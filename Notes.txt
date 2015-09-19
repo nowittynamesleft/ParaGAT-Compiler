@@ -1,0 +1,41 @@
+Syntax---------------------------------------------------------------
+	Enzymes
+		We think that enzymes are necessary for paraGAT because in 
+		order to build instruction stacks, each instruction will need 
+		sticky-ends to latch onto the tick and tock glue.
+		Though this may, in some instances, be unnecessary, in others, 
+		such as the DNA oragami, excess stands woulld generate 
+		problems with the spacing of the folds.
+
+		We propose that there be a specific set of primitives 
+		& functions to use enzymes.
+			e.g. <Enzyme Type> Enzyme <Variable>
+			There would need to be a way to specify what the 
+			enzyme would do (e.g. for a restiction enzyme what 
+			it would cut)
+	User Help
+		User needs instuctions to orient the pipette machine, 
+		as well as pauses to place iron balls into the machine
+		or remove them.
+		How does the user of the language dictate how much DNA 
+		there is in each test tube and how much of that DNA 
+		is actually used during the process (i.e. is one tock
+		cycle assumed to be 50 microliters, or is that defined
+		by the user? Is it possible to have a set ratio in the
+		program, have the user input only one number (i.e number
+		of pegs desired), and have the machine adjust the amount of
+		all other required materials accordingly?)
+		Can we use an array to organize substances?
+	Functions
+		What is function syntax?
+
+
+
+
+Questions------------------------------------------------------------
+	Do we have variable types?
+	For things like the iron collection balls, would a user
+	perhaps looking at a screen prompt, place them into the
+	solution?
+	Thermal Profile.
+
