@@ -1,0 +1,8 @@
+Python has several tools that can help us create a model of an abstract syntax 
+tree:
+
+-NodeVisitor:
+	-Gives ability to "visit" each node in an AST
+	-Meant to be subclassed where either generic_visit or visit_<class_name>	is overidden
+	-Doesn't modify AST, only visits nodes
+
