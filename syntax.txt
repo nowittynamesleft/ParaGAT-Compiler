@@ -11,6 +11,8 @@ Strand::=
 	"Strand" <var-name> “=” <length of Seq. in nucleotides> |
 	“Strand” <var-name> “=” “{“ <nucleotide> “,” <nucleotide>”,” … “}” |
 	“Strand” <var-name> “=” <Sequence> “+” <Sequence>
+Enzyme::=
+	"Enzyme" <type> <varname>; 
 if::=
 	“if” ”(“ <condition> “)” <statement>
 	[“else” ”if” ”(“ <condition>”)” <statement>]...
