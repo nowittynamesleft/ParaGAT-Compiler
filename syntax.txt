@@ -1,0 +1,23 @@
+Emma Bernstein
+ParaGAT Syntax Guide
+
+Not all functions will exist in paraGAT; for example compliment can
+be written in like, python.
+
+Strand::=
+	Declares an instruction for the compiler to generate a 
+	nucleotide sequence
+	-------------------------------------------------------------------
+	"Strand" <var-name> “=” <length of Seq. in nucleotides> |
+	“Strand” <var-name> “=” “{“ <nucleotide> “,” <nucleotide>”,” … “}” |
+	“Strand” <var-name> “=” <Sequence> “+” <Sequence>
+if::=
+	“if” ”(“ <condition> “)” <statement>
+	[“else” ”if” ”(“ <condition>”)” <statement>]...
+	[“else” <statement>]
+while::=
+	“while” ”(“ <statement> “)” <statement>
+sync::=
+	“start” ”sync” <statement> “end” “sync”
+async::=
+	“start” ”async” <statement> “end” “async”’
