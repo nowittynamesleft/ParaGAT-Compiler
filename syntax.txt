@@ -12,8 +12,10 @@ Strand::=
 	“Strand” <var-name> “=” “{“ <nucleotide> “,” <nucleotide>”,” … “}” |
 	“Strand” <var-name> “=” <Sequence> “+” <Sequence>
 
+**IGNORE**
 Enzyme::=
 	"Enzyme" <type> <varname>; 
+**********
 
 if::=
 	“if” ”(“ <condition> “) {” <statement> "}"
